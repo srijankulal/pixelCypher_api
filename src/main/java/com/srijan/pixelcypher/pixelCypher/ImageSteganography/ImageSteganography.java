@@ -76,7 +76,5 @@ public class ImageSteganography {
     //     System.out.println(ans);
     // }
     
-  
-    
 }
 //C:/Codes/Projects/pixelCypher/src/main/java/com/srijan/pixelcypher/pixelCypher/ImageSteganography

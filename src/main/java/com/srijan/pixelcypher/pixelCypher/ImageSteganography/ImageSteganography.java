@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author srijan
  */
 public class ImageSteganography {
-    public static void cypher(BufferedImage img,String text,String outputPath)throws IOException{
+    public static BufferedImage cypher(BufferedImage img,String text,String outputPath)throws IOException{
         text += "\0";
         byte[] textBytes = text.getBytes();
         int bitIndex = 0, byteIndex = 0;
@@ -36,6 +36,8 @@ public class ImageSteganography {
         }
 
         ImageIO.write(img, "png", new File(outputPath));
+        BufferedImage image = ImageIO.read(new File(outputPath));
+        return image;
     }
     private static int modifyPixel(int pixel, byte character, int bitIndex) {
         int mask = 1 << (7 - bitIndex);
@@ -66,13 +68,13 @@ public class ImageSteganography {
         }
         return text.toString();
     }
-    public static void main(String[] args) throws IOException { 
-        BufferedImage image = ImageIO.read(new File("C:/Codes/Projects/pixelCypher/src/main/java/com/srijan/pixelcypher/pixelCypher/ImageSteganography/input.png"));
-        // cypher(image, "Hello, World!", "output.png");
-        // System.out.println("Text embedded in image successfully!");
-        String ans=decypher(image);
-        System.out.println(ans);
-    }
+    // public static void main(String[] args) throws IOException { 
+    //     BufferedImage image = ImageIO.read(new File("C:/Codes/Projects/pixelCypher/src/main/java/com/srijan/pixelcypher/pixelCypher/ImageSteganography/input.png"));
+    //     // cypher(image, "Hello, World!", "output.png");
+    //     // System.out.println("Text embedded in image successfully!");
+    //     String ans=decypher(image);
+    //     System.out.println(ans);
+    // }
     
   
     

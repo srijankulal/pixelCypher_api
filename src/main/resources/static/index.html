@@ -8,28 +8,29 @@
             body {
                 display: flex;
                 justify-content: center;
-                align-items: center;
-                height: 100vh;
+                min-height: 100vh;
                 margin: 0;
                 background-color: #282c34;
                 color: white;
                 font-family: Arial, sans-serif;
-                overflow: hidden;
+                overflow-y: auto; /* Allow vertical scrolling */
+                padding-bottom: 60px; /* Make room for footer */
             }
             .container {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                width: 100%;
+                max-width: 1200px;
+                padding: 20px;
             }
             h1 {
-                
                 font-size: 5em;
                 justify-content: center;
                 color: blueviolet;
                 animation: fadeIn 2s ease-in-out;
             }
             p {
-
                 font-size: 1.5em;
                 animation: fadeIn 6s ease-in-out;
             }
@@ -53,17 +54,57 @@
                 color: white;
                 text-decoration: none;
             }
+            .api-docs {
+                width: 100%;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <h1>Pixel Cypher</h1>
             <p>Welcome to Pixel Cypher</p>
+
+            <div class="api-docs">
+                <!-- Rest of your code... -->
+
+                <h2
+                    style="color: #9370DB; margin-top: 50px; text-align: center; animation: fadeIn 4s ease-in-out;">API
+                    Documentation</h2>
+
+                <div
+                    style="background-color: #363a45; padding: 20px; border-radius: 8px; margin: 20px; animation: fadeIn 5s ease-in-out;">
+                    <h3>Endpoint: /api/encode</h3>
+                    <p>Encode a message into an image</p>
+                    <pre
+                        style="background-color: #1e2127; padding: 10px; border-radius: 5px; overflow-x: auto;">
+        POST /api/encode
+        Content-Type: multipart/form-data
+
+        {
+            "image": (file),
+            "message": "Your secret message here"
+        }</pre>
+                </div>
+
+                <div
+                    style="background-color: #363a45; padding: 20px; border-radius: 8px; margin: 20px; animation: fadeIn 5s ease-in-out;">
+                    <h3>Endpoint: /api/decode</h3>
+                    <p>Decode a message from an image</p>
+                    <pre
+                        style="background-color: #1e2127; padding: 10px; border-radius: 5px; overflow-x: auto;">
+        POST /api/decode
+        Content-Type: multipart/form-data
+
+        {
+            "image": (file)
+        }</pre>
+                </div>
+                </div>
+            </div>
         </div>
-
+    </div>
+        <footer>
+            <p>Developed by <a href="https://github.com/srijankulal" target="_blank">Srijan K</a></p>
+        </footer>
     </body>
-    <footer>
-
-        <p>Developed by <a target="_blank">Srijan K</a></p>
-    </footer>
 </html>

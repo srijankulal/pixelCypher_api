@@ -14,7 +14,7 @@ public class CorsConfig {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         
         // Allow requests from your Next.js application domain
-        corsConfiguration.addAllowedOrigin("*"); // Next.js dev server
+        corsConfiguration.addAllowedOrigin("https://pixelcypher-app.vercel.app"); // Next.js dev server
         
         // Allow common HTTP methods
         corsConfiguration.addAllowedMethod("GET");

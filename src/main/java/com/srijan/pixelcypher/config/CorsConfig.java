@@ -17,11 +17,9 @@ public class CorsConfig {
         corsConfiguration.addAllowedOrigin("https://pixelcypher-app.vercel.app"); // Next.js dev server
         
         // Allow common HTTP methods
-        corsConfiguration.addAllowedMethod("GET");
+    
         corsConfiguration.addAllowedMethod("POST");
-        corsConfiguration.addAllowedMethod("PUT");
-        corsConfiguration.addAllowedMethod("DELETE");
-        corsConfiguration.addAllowedMethod("OPTIONS");
+      
         
         // Allow all headers
         corsConfiguration.addAllowedHeader("*");

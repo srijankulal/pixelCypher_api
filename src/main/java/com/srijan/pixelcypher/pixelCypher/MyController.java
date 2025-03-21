@@ -14,7 +14,7 @@ import com.srijan.pixelcypher.pixelCypher.ImageSteganography.ImageSteganography;
 
 @RestController
 @RequestMapping("/api") // Base URL for API
-@CrossOrigin(origins = {"https://pixelcypher-app.vercel.app"}, allowCredentials = "true")
+@CrossOrigin(origins = {"https://pixelcypher-app.vercel.app"}, methods = {RequestMethod.POST})
 public class MyController {
     @PostMapping("/encode")
     public ResponseEntity<byte[]> encodeTextInImage(@RequestParam("image") MultipartFile imageFile,
